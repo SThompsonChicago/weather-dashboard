@@ -8,16 +8,31 @@
     </head>
 
     <body>
-        <div id="header" class="jumbotron top">Weather Dashboard</div>
+        <div id="header" class="hero top">Weather Dashboard</div>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                    <h3>Search for a City:</h3>
+                    <form id="city-form">
+                    <label class="form-label" for="city"></label>
+                    <input name="username" id="city" type="text" autofocus="true" class="form-input" />
+                    <button type="submit" class="btn card">Search</button>
+                    </form>
+            </div>
 
 
-        <ul>
-            <li id="temp"></li>
-            <li id="wind"></li>
-            <li id="hum"></li>
-        </ul>
+            <div class="col-12 col-md-8 current">
+                <ul>
+                    <li id="temp"></li>
+                    <li id="wind"></li>
+                    <li id="hum"></li>
+                </ul>
+            </div>
+        </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="./assets/js/script.js"></script>
+
+
     </body>
 
 
