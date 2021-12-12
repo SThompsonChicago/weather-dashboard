@@ -1,9 +1,18 @@
 var APIKey = "ad54bebac58cc390e5e8bdbe0c2225af";
-var city = "Baltimore";
+var cityFormEl = document.querySelector('#city-form');
+var cityInputEl = document.querySelector('#user-city');
+
+
+var formSubmitHandler = function(event) {
+  event.preventDefault();
+  var city = cityInputEl.value.trim();
+  getApi(city);
+  $('h1#currentWeather').html("Current weather in " + city); 
+}
 
 
 
-function getApi() {
+var getApi = function(city) {
   var requestUrl ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
   fetch(requestUrl)
     .then(function (response) {
@@ -16,6 +25,19 @@ function getApi() {
       $('#hum').html("Humidity: " + data.main.humidity + "%");
     });
 }
+
+
+
+
+cityFormEl.addEventListener('submit', formSubmitHandler);
+
+
+/* $('h1#currentWeather').html("Current weather in " + cityInputEl.value); */
+
+
+
+
+
 
 getApi();
   

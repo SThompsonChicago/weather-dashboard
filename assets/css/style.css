@@ -15,5 +15,10 @@
 
 .current {
     text-align: left;
+    border-style: solid;
 
+}
+
+.currentList {
+    list-style-type: none;
 }
